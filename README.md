@@ -1,1 +1,1 @@
-# graphql-go
+# graphql
