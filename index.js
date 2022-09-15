@@ -10,6 +10,7 @@ const typeDefs = gql`
         "A simple type for getting started!"
         hello: String
         books: [ Book ]
+        people: [ Person ]
     }
     type Book {
         title: String
@@ -18,6 +19,11 @@ const typeDefs = gql`
         url: String
         message: String
     }
+    type Person {
+        name: String
+        age: Int
+        id: Int
+    }
 `;
 
 const resolvers = {
@@ -25,6 +31,9 @@ const resolvers = {
         hello: () => "world",
         books: () => {
             return JSON.parse(readFileSync(join(dirname("."), "books.json").toString()));
+        },
+        people: () => {
+            return JSON.parse(readFileSync(join(dirname("."), "people.json").toString()));
         }
     }
 }
