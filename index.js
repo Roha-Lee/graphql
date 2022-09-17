@@ -13,7 +13,7 @@ const typeDefs = gql`
         author: User!
     }
     type Query {
-        allTweets: [Tweet]!
+        allTweets: [Tweet!]!
         tweet(id: ID!): Tweet
     }
     type Mutation {
